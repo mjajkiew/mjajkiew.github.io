@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestion Box</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">Suggestion Box</div>
+    <br>
+    <nav class="navigation"> <a href="index.html">Home</a> <a href="timeline.html">Games</a> <a href="samus_bio.html">Samus Bio</a> <a href="suggestion_box.html">Suggestions</a></nav>
+    <br>
+    <form class="timelineBox" id="myForm" action="confirmation.html" method="GET">
+            <h1 style="text-align: center;"> <i><u>Have any questions or suggestions? Leave them below!</u></i></h1>
+            <br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email" required />
+            <br>
+            <br>
+            <label for="type">Type:</label>
+            <select name="type" id="type" required>
+                <option value="question"> Question</option>
+                <option value="suggestion"> Suggestion</option>
+                <option value="comment"> Comment </option>
+            </select>
+            <br>
+            <br>
+            <label for="note">Comment:</label><br>
+            <br>
+            <textarea id="note" name="note" rows="8" cols="100" required></textarea>
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+    </form>
+    <script>
+        document.getElementById("myForm").onsubmit = function (event) {
+            var userEmail = document.getElementById("email").value
+            var typePicked = document.getElementById("type").value
+            var userNote = document.getElementById("note").value;
+            console.log(userEmail)
+            console.log(typePicked)
+            console.log(userNote)
+        };
+    </script>
+</body>
+</html>

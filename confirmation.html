@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestion Box</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">Suggestion Box</div>
+    <br>
+    <nav class="navigation"> <a href="index.html">Home</a> <a href="timeline.html">Games</a> <a href="samus_bio.html">Samus Bio</a> <a href="suggestion_box.html">Suggestions</a></nav>
+    <br>
+    <div class="timelineBox">
+        <h1 style="text-align: center;"><u><i>Comment sent!</i></u></h1>
+        <p style="text-align: center;">Thank you for sending a comment! Here is a confirmation of what you wrote:</p>
+        <p id="confirmEmail" style="margin-left: 20px;">error</p>
+        <p id="confirmType" style="margin-left: 20px;">error</p>
+        <p id="confirmNote" style="margin-left: 20px;">error</p>
+        <img src="images/samus-thumbs-up.gif" id="confirmPgGif">
+        <br>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const userEmail = urlParams.get("email");
+        const typePicked = urlParams.get("type")
+        const userNote = urlParams.get("note")
+        document.getElementById("confirmEmail").textContent = `Email: ${userEmail}`
+        document.getElementById("confirmType").textContent = `Type: ${typePicked}`
+        document.getElementById("confirmNote").textContent = `Note: ${userNote}`
+    </script>
+</body>
+</html>
